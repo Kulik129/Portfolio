@@ -1,7 +1,9 @@
 package com.example.portfolio.controllers;
 
 import com.example.portfolio.models.Certificates;
+import com.example.portfolio.models.Works;
 import com.example.portfolio.services.CertificateService;
+import com.example.portfolio.services.WorkService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,10 +17,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 public class CertificateController {
     private final CertificateService certificateService;
-
+    private final WorkService workService;
+    @GetMapping("/certificates")
+    public String viewCertificates( Model model){
+        model.addAttribute("certificates", certificateService.certificatesList());
+        return "certificates";
+    }
     @GetMapping("/")
-    public String certificate(@RequestParam(name = "title", required = false)String title, Model model){
-        model.addAttribute("certificates", certificateService.certificatesList(title));
+    public String certificate( Model model){
+        model.addAttribute("certificates", certificateService.certificatesList());
+        model.addAttribute("works", workService.worksList());
         return "main";
     }
 
