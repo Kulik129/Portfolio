@@ -15,10 +15,8 @@ import java.util.List;
 public class CertificateService {
     private final CertificateRepository certificateRepository;
 
-    public List<Certificates> certificatesList(String title){
-        if (title != null) {
-            return certificateRepository.findByTitle(title);
-        } return certificateRepository.findAll();
+    public List<Certificates> certificatesList(){
+        return certificateRepository.findAll();
     }
     public void saveCertificate(Certificates certificate) {
         log.info("Save {}", certificate);
