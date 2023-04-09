@@ -11,7 +11,6 @@
     <div class="certificates">
         <#list certificates as certificate>
             <h1>${certificate.title}</h1>
-            <h1>${certificate.description}</h1>
             <form action="/certificate/delete/${certificate.id}" method="post">
                 <input type="submit" value="Delete">
             </form>

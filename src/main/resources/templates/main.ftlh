@@ -5,35 +5,41 @@
     <title>Title</title>
 </head>
 <body>
+
 <div class="myWorks">
     <#list works as work>
         <div>
-            <h1>${work.title}</h1>
-            <h1${work.description}</h1>
-            <form action="/work/delete/${work.id}" method="post">
-                <input type="submit" value="delete">
-            </form>
+            <a href="work/${work.id}">
+                <h1>${work.title}</h1>
+                <h1${work.description}</h1>
+                <form action="/work/delete/${work.id}" method="post">
+                    <input type="submit" value="delete">
+                </form>
+            </a>
         </div>
     <#else>
         <h1>Upss..</h1>
     </#list>
-    <h1>Add work</h1>
-    <form action="/work/add" method="post">
-        <input type="text" name="title" placeholder="Название работы">
-        <input type="text" name="description" placeholder="Краткое описание">
+    <h1>Добавить работу</h1>
+    <form action="/work/add" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Название работы"><br>
+        <input type="text" name="description" placeholder="Краткое описание"><br>
+        Первая фотография: <input type="file" name="file1"/><br><br>
+        Вторая фотография: <input type="file" name="file2"/><br><br>
         <input type="submit" value="Add">
     </form>
 </div>
+
 <div class="certificates">
     <#list certificates as certificate>
         <div>
-            <h1>${certificate.title}</h1>
-            <h1>${certificate.description}</h1>
-            <form action="/certificate/delete/${certificate.id}" method="post">
-                <input type="submit" value="delete">
-            </form>
+            <a href="/certificates/${certificate.id}">
+                <h1>${certificate.title}</h1>
+                <form action="/certificate/delete/${certificate.id}" method="post">
+                    <input type="submit" value="Удалить">
+                </form>
+            </a>
         </div>
-
     <#else>
         <h1>Upss=( </h1>
     </#list>
@@ -41,7 +47,7 @@
     <form action="/certificate/add" method="post">
         <input type="text" name="title" placeholder="Название"><br>
         <input type="text" name="description" placeholder="Краткое описание"><br>
-        <input type="submit" value="Add">
+        <input type="submit" value="Добавить">
     </form>
 </div>
 </body>
