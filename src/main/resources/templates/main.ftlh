@@ -11,7 +11,7 @@
         <div>
             <a href="work/${work.id}">
                 <h1>${work.title}</h1>
-                <h1${work.description}</h1>
+<#--                <h1${work.description}</h1>-->
                 <form action="/work/delete/${work.id}" method="post">
                     <input type="submit" value="delete">
                 </form>
@@ -26,7 +26,7 @@
         <input type="text" name="description" placeholder="Краткое описание"><br>
         Первая фотография: <input type="file" name="file1"/><br><br>
         Вторая фотография: <input type="file" name="file2"/><br><br>
-        <input type="submit" value="Add">
+        <input type="submit" value="Добавить">
     </form>
 </div>
 
@@ -44,9 +44,11 @@
         <h1>Upss=( </h1>
     </#list>
     <h1>Add certificate</h1>
-    <form action="/certificate/add" method="post">
+    <form action="/certificate/add" method="post" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="Название"><br>
         <input type="text" name="description" placeholder="Краткое описание"><br>
+        Первая фотография: <input type="file" name="file1"/><br><br>
+        Вторая фотография: <input type="file" name="file2"/><br><br>
         <input type="submit" value="Добавить">
     </form>
 </div>

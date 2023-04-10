@@ -21,12 +21,12 @@ public class WorkService {
         return workRepository.findAll();
     }
 
-    public void saveWork(Works work, MultipartFile...files) throws IOException {
-        for (int i = 0; i< files.length;i++){
+    public void saveWork(Works work, MultipartFile... files) throws IOException {
+        for (int i = 0; i < files.length; i++) {
             MultipartFile file = files[i];
-            if (file.getSize()!=0){
+            if (file.getSize() != 0) {
                 Image image = toImageEntity(file);
-                if (i==0){
+                if (i == 0) {
                     image.setPreviewImage(true);
                 }
                 work.addImage(image);
@@ -36,6 +36,7 @@ public class WorkService {
         worksFromDB.setPreviewImageId(worksFromDB.getImages().get(0).getId());
         workRepository.save(work);
     }
+
     private Image toImageEntity(MultipartFile file) throws IOException {
         Image image = new Image();
         image.setName(file.getName());
