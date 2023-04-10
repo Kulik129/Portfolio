@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<a href="/login">Войти</a>
 
 <div class="myWorks">
     <#list works as work>
