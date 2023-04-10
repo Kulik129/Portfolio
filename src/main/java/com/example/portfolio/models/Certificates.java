@@ -20,4 +20,19 @@ public class Certificates {
     private Long id;
     private String title;
     private String description;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "certificates")
+    private List<Image> images = new ArrayList<>();
+
+    private Long previewImgId;
+    private LocalDateTime localDataTime;
+    @PrePersist
+    private void init() {
+        localDataTime = LocalDateTime.now();
+    }
+
+    public void addImage(Image image) {
+        image.setCertificates(this);
+        images.add(image);
+    }
 }
