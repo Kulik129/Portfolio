@@ -47,8 +47,9 @@ public class CertificateController {
         return "redirect:/";
     }
     @PostMapping("/certificate/delete/{id}")
-    public String deleteCertificate(@PathVariable Long id){
-        certificateService.deleteCertificate(id);
+    public String deleteCertificate(@PathVariable(name = "id") String id){
+        Long certificateID = Long.parseLong(id.trim());
+        certificateService.deleteCertificate(certificateID);
         return "redirect:/";
     }
 }
