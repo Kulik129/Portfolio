@@ -5,14 +5,15 @@
     <title>Title</title>
 </head>
 <body>
+<a href="/login">Войти</a>
 
 <div class="myWorks">
     <#list works as work>
         <div>
             <a href="work/${work.id}">
                 <h1>${work.title}</h1>
-<#--                <h1${work.description}</h1>-->
                 <form action="/work/delete/${work.id}" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
                     <input type="submit" value="delete">
                 </form>
             </a>
@@ -26,6 +27,7 @@
         <input type="text" name="description" placeholder="Краткое описание"><br>
         Первая фотография: <input type="file" name="file1"/><br><br>
         Вторая фотография: <input type="file" name="file2"/><br><br>
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
         <input type="submit" value="Добавить">
     </form>
 </div>
@@ -36,6 +38,7 @@
             <a href="/certificates/${certificate.id}">
                 <h1>${certificate.title}</h1>
                 <form action="/certificate/delete/${certificate.id}" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
                     <input type="submit" value="Удалить">
                 </form>
             </a>
@@ -49,6 +52,7 @@
         <input type="text" name="description" placeholder="Краткое описание"><br>
         Первая фотография: <input type="file" name="file1"/><br><br>
         Вторая фотография: <input type="file" name="file2"/><br><br>
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
         <input type="submit" value="Добавить">
     </form>
 </div>
