@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 import java.io.IOException;
+import java.security.Principal;
 
 @Controller
 @RequiredArgsConstructor
@@ -26,9 +27,10 @@ public class CertificateController {
         return "certificates";
     }
     @GetMapping("/")
-    public String certificate( Model model){
+    public String certificate( Model model, Principal principal){
         model.addAttribute("certificates", certificateService.certificatesList());
         model.addAttribute("works", workService.worksList());
+        model.addAttribute("user",certificateService.getUserByPrincipal(principal));
         return "main";
     }
     @GetMapping("/certificates/{id}")

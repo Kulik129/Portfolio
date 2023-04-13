@@ -5,7 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/login">Войти</a>
+
+<#if user.email??>
+    <h3>Имя пользователя: <i>${user.name}</i></h3>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <input type="submit" value="Выйти"/>
+    </form>
+    <#if user.isAdmin()>
+        <a href="/admin">Панель администратора</a>
+    </#if>
+<#else>
+    <h4><a href="/login">Войти</a></h4>
+</#if>
+<hr>
+
 
 <div class="myWorks">
     <#list works as work>
