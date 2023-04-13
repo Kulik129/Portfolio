@@ -31,8 +31,12 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
     private LocalDateTime localDateTime;
+    @PrePersist
     private void init(){
         localDateTime = LocalDateTime.now();
+    }
+    public boolean isAdmin(){
+        return roles.contains(Role.ADMIN);
     }
 
     @Override
