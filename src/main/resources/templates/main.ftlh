@@ -6,6 +6,8 @@
 </head>
 <body>
 <a href="/login">Войти</a>
+<#if user.isAdmin()>
+<a href="/admin"></a>
 
 <div class="myWorks">
     <#list works as work>

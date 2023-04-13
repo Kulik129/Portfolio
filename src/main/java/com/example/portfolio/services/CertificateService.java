@@ -2,13 +2,16 @@ package com.example.portfolio.services;
 
 import com.example.portfolio.models.Certificates;
 import com.example.portfolio.models.Image;
+import com.example.portfolio.models.User;
 import com.example.portfolio.repository.CertificateRepository;
+import com.example.portfolio.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.util.List;
 
 @Service
@@ -16,6 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CertificateService {
     private final CertificateRepository certificateRepository;
+    private final UserRepository userRepository;
 
     public List<Certificates> certificatesList() {
         return certificateRepository.findAll();
@@ -55,4 +59,8 @@ public class CertificateService {
         return certificateRepository.findById(id).orElse(null);
     }
 
+    public User getUserByPrincipal(Principal principal) {
+        if (principal == null) return new User();
+        return userRepository.findByEmail(principal.getName());
+    }
 }
