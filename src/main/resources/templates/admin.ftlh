@@ -23,7 +23,7 @@
         <tr>
             <th>${user.email}</th>
             <th>${user.phoneNumber}</th>
-            <th><#if user.active>true<#else>false</#if></th>
+            <th><#if user.active>Активен<#else>Заблокирован</#if></th>
             <th><#list user.roles as rol>${rol}, </#list></th>
             <th>
                 <form action="/admin/user/block/${user.id}" method="post">
