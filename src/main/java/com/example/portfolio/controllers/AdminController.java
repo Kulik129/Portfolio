@@ -30,6 +30,7 @@ public class AdminController {
         userService.blockUser(id);
         return "redirect:/admin";
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin/user/edit/{user}")
     public String userEdit(@PathVariable("user") User user, Model model) {
         model.addAttribute("user", user);
