@@ -70,5 +70,15 @@
         <input type="submit" value="Добавить">
     </form>
 </div>
+<div class="contact-me">
+    <h1>Связаться со мной</h1><br>
+    <form action="/message/send" method="post">
+        <input type="text" name="sender" placeholder="Введите ваш email">
+        <input type="text" name="messageSubject" placeholder="Тема письма">
+        <input type="text" name="message" placeholder="Введите текст сообщения...">
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <input type="submit" value="Отправить">
+    </form>
+</div>
 </body>
 </html>
