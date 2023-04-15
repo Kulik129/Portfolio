@@ -10,7 +10,7 @@
 <body>
     <div class="message">
         <#list messages as message>
-            <h3>Отправитель${message.sender}</h3>
+            <h3>Отправитель: ${message.sender}</h3>
             <h3>Тема: ${message.messageSubject}</h3>
             <h3>Сообщение: ${message.message}</h3>
             <h3>Отправленно: ${message.localDateTime}</h3>

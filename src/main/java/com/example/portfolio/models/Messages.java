@@ -18,6 +18,7 @@ public class Messages {
     private Long id;
     private String sender;
     private String messageSubject;
+    @Column(name = "message", columnDefinition = "text")
     private String message;
     private LocalDateTime localDateTime;
     @PrePersist

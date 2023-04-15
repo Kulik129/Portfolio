@@ -3,6 +3,7 @@ package com.example.portfolio.controllers;
 import com.example.portfolio.models.Messages;
 import com.example.portfolio.services.MessagesService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequiredArgsConstructor
+
 public class MessageController {
     private final MessagesService messageService;
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/message")
     public String viewMessages(Model model) {
         model.addAttribute("messages", messageService.messagesList());
