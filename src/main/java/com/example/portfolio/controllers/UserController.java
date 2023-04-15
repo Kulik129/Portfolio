@@ -3,6 +3,7 @@ package com.example.portfolio.controllers;
 import com.example.portfolio.models.User;
 import com.example.portfolio.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,7 @@ public class UserController {
         }
         return "redirect:/login";
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/user/{user}")
     public String userInfo(@PathVariable("user") User user, Model model) {
         model.addAttribute("user", user);
