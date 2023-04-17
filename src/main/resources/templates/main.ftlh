@@ -27,6 +27,7 @@
         <div>
             <a href="work/${work.id}">
                 <h1>${work.title}</h1>
+                <img src="/images/${work.previewImageId?c}" height="120px">
                 <#if user.isAdmin()>
                 <form action="/work/delete/${work.id}" method="post">
                     <input type="hidden" name="_csrf" value="${_csrf.token}">
@@ -56,6 +57,7 @@
         <div>
             <a href="/certificates/${certificate.id}">
                 <h1>${certificate.title}</h1>
+                <img src="/images/${certificate.previewImgId?c}" height="120px">
                 <#if user.isAdmin()>
                 <form action="/certificate/delete/${certificate.id}" method="post">
                     <input type="hidden" name="_csrf" value="${_csrf.token}">
