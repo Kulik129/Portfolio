@@ -1,0 +1,51 @@
+body {
+    background: #1d1d1d;
+    display: block;
+    color: #fff;
+    padding-left: 13rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.main-menu {
+    width: 13rem;
+    background-color: #181818;
+    height: 100vh;
+    position: fixed;
+    lefT: 0;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 3;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.list_menu a{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 1.6rem;
+    color: #909096;
+    line-height: 5rem;
+    border-bottom: 1px solid #282828;
+}
+.about h4{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+.about h1{
+    font-family: Impact, fantasy;
+}
+.annotation {
+    color: rgba(235, 255, 0, 0.56);
+}
+.cod-text {
+    color: rgba(213, 213, 213, 0.38);
+    line-height: 0em;
+}
+.about-text {
+    color: #ffffff;
+}
