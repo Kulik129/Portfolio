@@ -39,5 +39,24 @@
     </#list>
 </table>
 <hr>
+<h1>Добавить работу</h1>
+<form action="/work/add" method="post" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Название работы"><br>
+    <input type="text" name="description" placeholder="Краткое описание"><br>
+    Первая фотография: <input type="file" name="file1"/><br><br>
+    Вторая фотография: <input type="file" name="file2"/><br><br>
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <input type="submit" value="Добавить">
+</form>
+
+<h1>Add certificate</h1>
+<form action="/certificate/add" method="post" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Название"><br>
+    <input type="text" name="description" placeholder="Краткое описание"><br>
+    Первая фотография: <input type="file" name="file1"/><br><br>
+    Вторая фотография: <input type="file" name="file2"/><br><br>
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <input type="submit" value="Добавить">
+</form>
 </body>
 </html>
