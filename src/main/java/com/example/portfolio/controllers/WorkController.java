@@ -1,6 +1,7 @@
 package com.example.portfolio.controllers;
 
 import com.example.portfolio.models.Works;
+import com.example.portfolio.services.CertificateService;
 import com.example.portfolio.services.WorkService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -12,14 +13,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.security.Principal;
 
 @Controller
 @RequiredArgsConstructor
 public class WorkController {
     private final WorkService workService;
+    private final CertificateService certificateService;
+
     @GetMapping("/works")
-    public String viewWork(Model model){
+    public String viewWork(Model model, Principal principal){
         model.addAttribute("works", workService.worksList());
+        model.addAttribute("user",certificateService.getUserByPrincipal(principal));
         return "works";
     }
     @GetMapping("work/{id}")

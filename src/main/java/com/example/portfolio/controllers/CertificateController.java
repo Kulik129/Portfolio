@@ -22,8 +22,9 @@ public class CertificateController {
     private final CertificateService certificateService;
     private final WorkService workService;
     @GetMapping("/certificates")
-    public String viewCertificates( Model model){
+    public String viewCertificates( Model model, Principal principal){
         model.addAttribute("certificates", certificateService.certificatesList());
+        model.addAttribute("user",certificateService.getUserByPrincipal(principal));
         return "certificates";
     }
     @GetMapping("/")

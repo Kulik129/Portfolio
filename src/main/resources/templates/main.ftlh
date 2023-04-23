@@ -1,44 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <title>Title</title>
-</head>
-<body>
+<#--<!DOCTYPE html>-->
+<#--<html lang="en">-->
+<#--<head>-->
+<#--    <meta charset="UTF-8">-->
+<#--    <meta name="viewport"-->
+<#--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<#--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<#--    <link rel="stylesheet" href="/static/css/style.css">-->
+<#--    <title>Title</title>-->
+<#--</head>-->
+<#--<body>-->
 
-<div class="main-menu">
-    <div class="list_menu">
-        <#if user.email??>
-            <h3><i>${user.name}</i></h3>
-            <a href="/">Обомне</a>
-            <a href="/certificates">Сертификаты</a>
-            <a href="/works">Работы</a>
-            <a href="/">Связь со мной</a>
-            <form action="/logout" method="post">
-                <input type="hidden" name="_csrf" value="${_csrf.token}">
-                <input type="submit" value="Выйти"/>
-            </form>
-            <#if user.isAdmin()>
-                <a href="/admin">Админка</a>
-                <a href="/message">Сообщения</a>
-                <a href="/">Обомне</a>
-                <a href="/certificates">Сертификаты</a>
-                <a href="/works">Работы</a>
-                <a href="/">Связь со мной</a>
-            </#if>
-        <#else>
-            <a href="/login">Войти</a>
-            <a href="/">Обомне</a>
-            <a href="/certificates">Сертификаты</a>
-            <a href="/works">Работы</a>
-            <a href="/">Связь со мной</a>
-        </#if>
-    </div>
-</div>
+<#--<div class="main-menu">-->
+<#--    <div class="list_menu">-->
+<#--        <#if user.email??>-->
+<#--            <h3><i>${user.name}</i></h3>-->
+<#--            <a href="/">Обомне</a>-->
+<#--            <a href="/certificates">Сертификаты</a>-->
+<#--            <a href="/works">Работы</a>-->
+<#--            <a href="/">Связь со мной</a>-->
+<#--            <form action="/logout" method="post">-->
+<#--                <input type="hidden" name="_csrf" value="${_csrf.token}">-->
+<#--                <input type="submit" value="Выйти"/>-->
+<#--            </form>-->
+<#--            <#if user.isAdmin()>-->
+<#--                <a href="/admin">Админка</a>-->
+<#--                <a href="/message">Сообщения</a>-->
+<#--            </#if>-->
+<#--        <#else>-->
+<#--            <a href="/login">Войти</a>-->
+<#--            <a href="/">Обомне</a>-->
+<#--            <a href="/certificates">Сертификаты</a>-->
+<#--            <a href="/works">Работы</a>-->
+<#--            <a href="/">Связь со мной</a>-->
+<#--        </#if>-->
+<#--    </div>-->
+<#--</div>-->
+<#import "menu/template.ftlh" as t>
+<@t.template user>
+</@t.template>
+
+
 
 <div class="about">
     <h3>@SpringBootApplication</h3>
@@ -64,7 +65,7 @@
 <div class="myWorks">
     <#list works as work>
         <div>
-            <a href="work/${work.id}">
+            <a href="work/${work.id?c}">
                 <h1>${work.title}</h1>
                 <img src="/images/${work.previewImageId?c}" height="120px">
                 <#if user.isAdmin()>
@@ -78,7 +79,6 @@
     <#else>
         <h1>Upss..</h1>
     </#list>
-
 </div>
 <div class="text_zone">
     <h4>public class Certificates {<br>
@@ -91,7 +91,7 @@
 <div class="certificates">
     <#list certificates as certificate>
         <div>
-            <a href="/certificates/${certificate.id}">
+            <a href="/certificates/${certificate.id?c}">
                 <h1>${certificate.title}</h1>
                 <img src="/images/${certificate.previewImgId?c}" height="120px">
                 <#if user.isAdmin()>

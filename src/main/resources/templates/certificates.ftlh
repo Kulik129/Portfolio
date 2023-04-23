@@ -8,21 +8,34 @@
     <title>Certificates</title>
 </head>
 <body>
-    <div class="certificates">
-        <#list certificates as certificate>
-            <h1>${certificate.title}</h1>
-            <form action="/certificate/delete/${certificate.id}" method="post">
-                <input type="submit" value="Delete">
-            </form>
-            <#else>
-            <h1>Upss=(</h1>
-        </#list>
-        <h1>Add certificate</h1>
-        <form action="/certificate/add" method="post">
-            <input type="text" name="title" placeholder="Название"><br>
-            <input type="text" name="description" placeholder="Краткое описание"><br>
-            <input type="submit" value="Add">
-        </form>
-    </div>
+<#import "menu/template.ftlh" as t>
+<@t.template user>
+</@t.template>
+<div class="text_zone">
+    <h4>public class Certificates {<br>
+        private String = "
+    </h4>
+    <h3>Небольшая галерея моих сертификатов</h3>
+    <h4>}</h4>
+</div>
+
+<div class="certificates">
+    <#list certificates as certificate>
+        <div>
+            <a href="/certificates/${certificate.id?c}">
+                <h1>${certificate.title}</h1>
+                <img src="/images/${certificate.previewImgId?c}" height="120px">
+                <#if user.isAdmin()>
+                    <form action="/certificate/delete/${certificate.id}" method="post">
+                        <input type="hidden" name="_csrf" value="${_csrf.token}">
+                        <input type="submit" value="Удалить">
+                    </form>
+                </#if>
+            </a>
+        </div>
+    <#else>
+        <h1>Upss=( </h1>
+    </#list>
+</div>
 </body>
 </html>

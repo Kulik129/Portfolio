@@ -5,24 +5,33 @@
     <title>Works</title>
 </head>
 <body>
+<#import "menu/template.ftlh" as t>
+<@t.template user>
+</@t.template>
+<div class="text_zone">
+    <h4>public class Works {<br>
+        private String = "
+    </h4>
+    <h3>Небольшая галерея последних проектов, выполненых мной</h3>
+    <h4>}</h4>
+</div>
 <div class="myWorks">
     <#list works as work>
         <div>
-            <h1>${work.title}</h1>
-            <h1${work.description}</h1>
-            <form action="/work/delete/${work.id}" method="post">
-                <input type="submit" value="delete">
-            </form>
+            <a href="work/${work.id?c}">
+                <h1>${work.title}</h1>
+                <img src="/images/${work.previewImageId?c}" height="120px">
+                <#if user.isAdmin()>
+                    <form action="/work/delete/${work.id}" method="post">
+                        <input type="hidden" name="_csrf" value="${_csrf.token}">
+                        <input type="submit" value="delete">
+                    </form>
+                </#if>
+            </a>
         </div>
     <#else>
         <h1>Upss..</h1>
     </#list>
-    <h1>Add work</h1>
-    <form action="/work/add" method="post">
-        <input type="text" name="title" placeholder="Название работы">
-        <input type="text" name="description" placeholder="Краткое описание">
-        <input type="submit" value="Add">
-    </form>
 </div>
 </body>
 </html>
