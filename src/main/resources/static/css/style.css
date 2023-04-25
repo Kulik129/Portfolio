@@ -6,6 +6,7 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
 .main-menu {
     width: 8rem;
     background-color: #181818;
@@ -23,7 +24,8 @@ body {
     margin: 0;
     padding: 20px;
 }
-.list_menu a{
+
+.list_menu a {
     font-family: Brush Script MT, Brush Script Std, cursive;
     text-align: center;
     width: 100%;
@@ -33,15 +35,18 @@ body {
     line-height: 5rem;
     border-bottom: 1px solid #282828;
 }
-.about h4, h3{
+
+.about h4, h3 {
     font-family: Brush Script MT, Brush Script Std, cursive;
     color: rgba(213, 213, 213, 0.38);
     line-height: 2em;
 }
-.about h1{
+
+.about h1 {
     font-family: Impact, fantasy;
     color: #ffffff;
 }
+
 .about h3 {
     color: rgba(235, 255, 0, 0.56);
     /*line-height: 0em;*/
@@ -50,47 +55,179 @@ body {
 /*Класс с работами*/
 .myWorks {
     display: grid;
-    grid-template-columns: repeat(3,3fr);
+    grid-template-columns: repeat(3, 3fr);
     gap: 2rem;
 }
-.myWorks h1{
+
+.myWorks h1 {
     font-family: Brush Script MT, Brush Script Std, cursive;
     color: #ffffff;
     font-size: 1.6rem;
 }
-.text_zone h4{
+
+.text_zone h4 {
     font-family: Brush Script MT, Brush Script Std, cursive;
     color: rgba(213, 213, 213, 0.38);
     line-height: 2em;
 }
-.text_zone h3{
+
+/*Зона с описанием работ*/
+.wrapper {
+    height: 7vh;
+    display: grid;
+    place-items: center;
+}
+
+.typing-demo {
+    color: rgb(118, 255, 0);
+    width: 31ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 3em;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+
+.text_zone h3 {
     font-family: Brush Script MT, Brush Script Std, cursive;
     color: rgb(118, 255, 0);
     font-size: 3rem;
     text-align: center;
     line-height: 2em;
 }
+
 /*Класс с сертификатами*/
-.certificates{
+.certificates {
     display: grid;
-    grid-template-columns: repeat(3,3fr);
+    grid-template-columns: repeat(3, 3fr);
     gap: 2rem;
 }
 
-.certificates h1{
+.certificates h1 {
     font-family: Brush Script MT, Brush Script Std, cursive;
     color: #ffffff;
     font-size: 1.6rem;
 }
-.contact-me input {
+
+/*Связаться со мной*/
+.contact-me {
     font-family: Brush Script MT, Brush Script Std, cursive;
     width: 100%;
     border: 0;
-    background: #2b2b2b;
-    height: 50px;
-    font-size: 16px;
-    color: #8d8d8d;
-    padding: 0 20px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
+
+.contact-me h1 {
+    font-size: 30px;
+    text-align: left;
+    color: #08fdd8;
+    text-transform: uppercase;
+}
+
+input {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    background: transparent;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding-left: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+input::placeholder {
+    font-size: 24px;
+    color: #8d8d8d;
+}
+
+input:focus::placeholder {
+    color: #ffffff;
+}
+
+input:focus {
+    outline: none;
+}
+
+.name {
+    width: 59%;
+}
+
+.messageSubject {
+    width: 290px;
+}
+
+.text_area {
+    margin-top: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 13px;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    font-size: 24px;
+    color: #8d8d8d;
+}
+
+textarea {
+    margin-top: 0px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+textarea:focus::placeholder {
+    color: #ffffff;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.send {
+    width: 100%;
+    text-align: right;
+}
+
+button {
+    float: right;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: aqua;
+    border-radius: 5px;
+    border: 1px solid aqua;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+

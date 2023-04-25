@@ -1,44 +1,6 @@
-<#--<!DOCTYPE html>-->
-<#--<html lang="en">-->
-<#--<head>-->
-<#--    <meta charset="UTF-8">-->
-<#--    <meta name="viewport"-->
-<#--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
-<#--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
-<#--    <link rel="stylesheet" href="/static/css/style.css">-->
-<#--    <title>Title</title>-->
-<#--</head>-->
-<#--<body>-->
-
-<#--<div class="main-menu">-->
-<#--    <div class="list_menu">-->
-<#--        <#if user.email??>-->
-<#--            <h3><i>${user.name}</i></h3>-->
-<#--            <a href="/">Обомне</a>-->
-<#--            <a href="/certificates">Сертификаты</a>-->
-<#--            <a href="/works">Работы</a>-->
-<#--            <a href="/">Связь со мной</a>-->
-<#--            <form action="/logout" method="post">-->
-<#--                <input type="hidden" name="_csrf" value="${_csrf.token}">-->
-<#--                <input type="submit" value="Выйти"/>-->
-<#--            </form>-->
-<#--            <#if user.isAdmin()>-->
-<#--                <a href="/admin">Админка</a>-->
-<#--                <a href="/message">Сообщения</a>-->
-<#--            </#if>-->
-<#--        <#else>-->
-<#--            <a href="/login">Войти</a>-->
-<#--            <a href="/">Обомне</a>-->
-<#--            <a href="/certificates">Сертификаты</a>-->
-<#--            <a href="/works">Работы</a>-->
-<#--            <a href="/">Связь со мной</a>-->
-<#--        </#if>-->
-<#--    </div>-->
-<#--</div>-->
 <#import "menu/template.ftlh" as t>
 <@t.template user>
 </@t.template>
-
 
 
 <div class="about">
@@ -54,6 +16,7 @@
     <h4>}</h4>
     <h4>}</h4>
 </div>
+
 
 <div class="text_zone">
     <h4>public class Works {<br>
@@ -71,7 +34,7 @@
                 <#if user.isAdmin()>
                     <form action="/work/delete/${work.id}" method="post">
                         <input type="hidden" name="_csrf" value="${_csrf.token}">
-                        <input type="submit" value="delete">
+                        <button type="submit">Удалить</button>
                     </form>
                 </#if>
             </a>
@@ -97,7 +60,7 @@
                 <#if user.isAdmin()>
                     <form action="/certificate/delete/${certificate.id}" method="post">
                         <input type="hidden" name="_csrf" value="${_csrf.token}">
-                        <input type="submit" value="Удалить">
+                        <button type="submit">Удалить</button>
                     </form>
                 </#if>
             </a>
@@ -107,15 +70,22 @@
     </#list>
 </div>
 <div class="contact-me">
-    <h1>Связаться со мной</h1><br>
-    <form action="/message/send" method="post">
-        <input type="text" name="sender" placeholder="Введите ваш email">
-        <input type="text" name="messageSubject" placeholder="Тема письма">
-        <input type="text" name="message" placeholder="Введите текст сообщения...">
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <button type="submit">Отправить</button>
-<#--        <input type="submit" value="Отправить">-->
-    </form>
+    <div class="form">
+        <h1>Связаться со мной</h1><br>
+        <div class="data_block">
+            <form action="/message/send" method="post">
+                <input type="text" class="name" name="sender" placeholder="Введите ваш email">
+                <input type="text" class="messageSubject" name="messageSubject" placeholder="Тема письма">
+                <div class="text_area">
+                    <p class="message">Message</p>
+                    <textarea name="message" rows="5" placeholder="Введите текст сообщения..."></textarea>
+                </div>
+                <input type="hidden" name="_csrf" value="${_csrf.token}">
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
 </div>
 </body>
 </html>

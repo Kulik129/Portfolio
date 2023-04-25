@@ -12,10 +12,14 @@
 <@t.template user>
 </@t.template>
 <div class="text_zone">
-    <h4>public class Certificates {<br>
+    <h4>public class Works {<br>
         private String = "
     </h4>
-    <h3>Небольшая галерея моих сертификатов</h3>
+    <div class="wrapper">
+        <div class="typing-demo">
+            Небольшая галерея моих сертификатов
+        </div>
+    </div>
     <h4>}</h4>
 </div>
 

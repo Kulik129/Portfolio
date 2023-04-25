@@ -1,6 +1,6 @@
 <#macro template user>
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="ru">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -36,4 +36,6 @@
         </#if>
     </div>
 </div>
+<script src="/static/css/js/main.js"></script>
+</body>
 </#macro>

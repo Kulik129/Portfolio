@@ -12,7 +12,11 @@
     <h4>public class Works {<br>
         private String = "
     </h4>
-    <h3>Небольшая галерея последних проектов, выполненых мной</h3>
+    <div class="wrapper">
+        <div class="typing-demo">
+            Небольшая галерея моих проектов
+        </div>
+    </div>
     <h4>}</h4>
 </div>
 <div class="myWorks">
