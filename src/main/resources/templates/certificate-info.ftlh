@@ -5,6 +5,9 @@
     <title>Certificates</title>
 </head>
 <body>
+<#import "menu/template.ftlh" as t>
+<@t.template user>
+</@t.template>
 <div class="certificates">
     <#list images as img>
         <img src="/images/${img.id?c}" height="120px"><br>

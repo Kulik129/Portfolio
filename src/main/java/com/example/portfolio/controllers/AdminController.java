@@ -2,6 +2,7 @@ package com.example.portfolio.controllers;
 
 import com.example.portfolio.models.User;
 import com.example.portfolio.models.enums.Role;
+import com.example.portfolio.services.CertificateService;
 import com.example.portfolio.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
 import java.util.Map;
 
 @Controller
@@ -19,9 +21,11 @@ import java.util.Map;
 @PreAuthorize("hasAuthority('ADMIN')")
 public class AdminController {
     private final UserService userService;
+    private final CertificateService certificateService;
     @GetMapping("/admin")
-    public String admin(Model model){
+    public String admin(Model model, Principal principal){
         model.addAttribute("users", userService.userList());
+        model.addAttribute("user",certificateService.getUserByPrincipal(principal));
         return "admin";
     }
 

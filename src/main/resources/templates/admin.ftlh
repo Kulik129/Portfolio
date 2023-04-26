@@ -1,13 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin</title>
 </head>
 <body>
+<#import "menu/template.ftlh" as t>
+<@t.template user>
+</@t.template>
 <h2>Панель администратора</h2>
 <table border="1">
     <tr>
@@ -46,17 +46,17 @@
     Первая фотография: <input type="file" name="file1"/><br><br>
     Вторая фотография: <input type="file" name="file2"/><br><br>
     <input type="hidden" name="_csrf" value="${_csrf.token}">
-    <input type="submit" value="Добавить">
+    <button type="submit">Добавить</button>
 </form>
 
-<h1>Add certificate</h1>
+<h1>Добавить сертификат</h1>
 <form action="/certificate/add" method="post" enctype="multipart/form-data">
     <input type="text" name="title" placeholder="Название"><br>
     <input type="text" name="description" placeholder="Краткое описание"><br>
     Первая фотография: <input type="file" name="file1"/><br><br>
     Вторая фотография: <input type="file" name="file2"/><br><br>
     <input type="hidden" name="_csrf" value="${_csrf.token}">
-    <input type="submit" value="Добавить">
+    <button type="submit">Добавить</button>
 </form>
 </body>
 </html>

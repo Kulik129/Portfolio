@@ -42,6 +42,7 @@
         </#if>
     </div>
 </div>
+<#nested/>
 <script src="/static/css/js/script.js"></script>
 </body>
 </#macro>

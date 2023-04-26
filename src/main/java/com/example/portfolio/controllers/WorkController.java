@@ -28,11 +28,12 @@ public class WorkController {
         return "works";
     }
     @GetMapping("work/{id}")
-    public String workInfo(Model model, @PathVariable(name = "id") String id){
+    public String workInfo(Model model, @PathVariable(name = "id") String id, Principal principal){
         Long workID = Long.parseLong(id.trim());
         Works work = workService.getWorkById(workID);
         model.addAttribute("works", work);
         model.addAttribute("images", work.getImages());
+        model.addAttribute("user",certificateService.getUserByPrincipal(principal));
         return "work-info";
     }
 

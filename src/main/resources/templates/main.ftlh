@@ -24,6 +24,8 @@
     gl_Position = projectionMatrix * mvPosition;
 
   }
+
+
         </script>
         <script type="x-shader/x-fragment" id="fragmentshader">
 
@@ -38,12 +40,14 @@
    gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
 
  }
+
+
         </script>
         <div id="magic"></div>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js'></script>
         <script src="/static/js/script.js"></script>
     </div>
-        <h1>Java</h1><h4>";</h4>
+    <h4>";</h4>
     <h4>}</h4>
     <h4>}</h4>
 </div>
@@ -102,26 +106,25 @@
 </div>
 
 <div class="contact-me">
-    <div class="form">
-        <div class="text_zone">
-            <h4>public class ContactMe {<br>
-                private String = "
-            </h4>
-            <h1>Связаться со мной</h1><h4>";</h4>
-            <div class="data_block">
-                <form action="/message/send" method="post">
-                    <input type="text" class="name" name="sender" placeholder="Введите ваш email">
-                    <input type="text" class="messageSubject" name="messageSubject" placeholder="Тема письма">
-                    <div class="text_area">
-                        <p class="message">Message</p>
-                        <textarea name="message" rows="5" placeholder="Введите текст сообщения..."></textarea>
-                    </div>
-                    <input type="hidden" name="_csrf" value="${_csrf.token}">
-                    <button type="submit">Отправить</button>
-                </form>
-            </div>
-            <h4>}</h4>
+
+    <div class="text_zone">
+        <h4>public class ContactMe {<br>
+            private String = "
+        </h4>
+        <h1>Связаться со мной</h1><h4>";</h4>
+        <div class="data_block">
+            <form action="/message/send" method="post">
+                <input type="text" class="name" name="sender" placeholder="Введите ваш email">
+                <input type="text" class="messageSubject" name="messageSubject" placeholder="Тема письма">
+                <div class="text_area">
+                    <p class="message">Message</p>
+                    <textarea name="message" rows="5" placeholder="Введите текст сообщения..."></textarea>
+                </div>
+                <input type="hidden" name="_csrf" value="${_csrf.token}">
+                <button type="submit">Отправить</button>
+            </form>
         </div>
+        <h4>}</h4>
     </div>
 
 </div>

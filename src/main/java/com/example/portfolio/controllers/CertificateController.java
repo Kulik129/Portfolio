@@ -35,11 +35,12 @@ public class CertificateController {
         return "main";
     }
     @GetMapping("/certificates/{id}")
-    public String certificateInfo(Model model, @PathVariable(name = "id") String id) {
+    public String certificateInfo(Model model, @PathVariable(name = "id") String id, Principal principal) {
         Long certificateID = Long.parseLong(id.trim());
         Certificates certificates = certificateService.getCertificateById(certificateID);
         model.addAttribute("certificates", certificates);
         model.addAttribute("images", certificates.getImages());
+        model.addAttribute("user",certificateService.getUserByPrincipal(principal));
         return "certificate-info";
     }
 
