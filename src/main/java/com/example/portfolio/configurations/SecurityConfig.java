@@ -22,7 +22,7 @@ public class SecurityConfig implements WebMvcConfigurer {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/", "/registration","/images/**", "/static/**","/message/send").permitAll()
+                        .requestMatchers("/","/certificates/**","/works","work/**", "/registration","/images/**", "/static/**","/message/send").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form

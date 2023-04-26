@@ -65,6 +65,10 @@ body {
     font-size: 1.6rem;
 }
 
+.text_zone {
+    margin-top: 200px;
+}
+
 .text_zone h4 {
     font-family: Brush Script MT, Brush Script Std, cursive;
     color: rgba(213, 213, 213, 0.38);
@@ -103,11 +107,11 @@ body {
 
 
 .text_zone h3 {
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: Impact, fantasy;
     color: rgb(118, 255, 0);
     font-size: 3rem;
     text-align: center;
-    line-height: 2em;
+    line-height: 0em;
 }
 
 /*Класс с сертификатами*/
@@ -231,3 +235,11 @@ button:active {
     transform: translateY(2px);
 }
 
+.js {
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}

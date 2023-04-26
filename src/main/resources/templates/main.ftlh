@@ -2,7 +2,6 @@
 <@t.template user>
 </@t.template>
 
-
 <div class="about">
     <h3>@SpringBootApplication</h3>
     <h4>public class Dmitrii {<br>
@@ -10,9 +9,41 @@
         SpringApplication.run(Dmitrii.class, args); <br>
         private String aboutMe = “
     </h4><br>
-    <h1>HI ! I”m Dmitrii Back- end developer</h1> <h4>“;</h4> <br>
-    <h4>private String language = “</h4>
-    <h1>Java</h1><h4>";</h4>
+    <div class="js">
+        <script type="x-shader/x-vertex" id="vertexshader">
+
+  attribute float size;
+  attribute vec3 customColor;
+  varying vec3 vColor;
+
+  void main() {
+
+    vColor = customColor;
+    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+    gl_PointSize = size * ( 300.0 / -mvPosition.z );
+    gl_Position = projectionMatrix * mvPosition;
+
+  }
+        </script>
+        <script type="x-shader/x-fragment" id="fragmentshader">
+
+ uniform vec3 color;
+ uniform sampler2D pointTexture;
+
+ varying vec3 vColor;
+
+ void main() {
+
+   gl_FragColor = vec4( color * vColor, 1.0 );
+   gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+
+ }
+        </script>
+        <div id="magic"></div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js'></script>
+        <script src="/static/js/script.js"></script>
+    </div>
+        <h1>Java</h1><h4>";</h4>
     <h4>}</h4>
     <h4>}</h4>
 </div>
@@ -22,7 +53,7 @@
     <h4>public class Works {<br>
         private String = "
     </h4>
-    <h3>Небольшая галерея последних проектов, выполненых мной</h3>
+    <h3>Небольшая галерея моих проектов</h3><h4>";</h4>
     <h4>}</h4>
 </div>
 <div class="myWorks">
@@ -47,7 +78,7 @@
     <h4>public class Certificates {<br>
         private String = "
     </h4>
-    <h3>Небольшая галерея моих сертификатов</h3>
+    <h3>Небольшая галерея моих сертификатов</h3><h4>";</h4>
     <h4>}</h4>
 </div>
 
@@ -69,20 +100,27 @@
         <h1>Upss=( </h1>
     </#list>
 </div>
+
 <div class="contact-me">
     <div class="form">
-        <h1>Связаться со мной</h1><br>
-        <div class="data_block">
-            <form action="/message/send" method="post">
-                <input type="text" class="name" name="sender" placeholder="Введите ваш email">
-                <input type="text" class="messageSubject" name="messageSubject" placeholder="Тема письма">
-                <div class="text_area">
-                    <p class="message">Message</p>
-                    <textarea name="message" rows="5" placeholder="Введите текст сообщения..."></textarea>
-                </div>
-                <input type="hidden" name="_csrf" value="${_csrf.token}">
-                <button type="submit">Отправить</button>
-            </form>
+        <div class="text_zone">
+            <h4>public class ContactMe {<br>
+                private String = "
+            </h4>
+            <h1>Связаться со мной</h1><h4>";</h4>
+            <div class="data_block">
+                <form action="/message/send" method="post">
+                    <input type="text" class="name" name="sender" placeholder="Введите ваш email">
+                    <input type="text" class="messageSubject" name="messageSubject" placeholder="Тема письма">
+                    <div class="text_area">
+                        <p class="message">Message</p>
+                        <textarea name="message" rows="5" placeholder="Введите текст сообщения..."></textarea>
+                    </div>
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+            <h4>}</h4>
         </div>
     </div>
 

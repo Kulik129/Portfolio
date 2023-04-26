@@ -57,12 +57,13 @@ class Environment {
 
     createRenderer() {
 
-        this.renderer = new THREE.WebGLRenderer();
+        this.renderer = new THREE.WebGLRenderer({ alpha: true });
         this.renderer.setSize( this.container.clientWidth, this.container.clientHeight );
 
         this.renderer.setPixelRatio( Math.min( window.devicePixelRatio, 2));
 
         this.renderer.outputEncoding = THREE.sRGBEncoding;
+        this.renderer.setClearColor(0x000000, 0);
         this.container.appendChild( this.renderer.domElement );
 
         this.renderer.setAnimationLoop(() => { this.render() })
@@ -89,7 +90,7 @@ class CreateParticles {
         this.renderer = renderer;
 
         this.raycaster = new THREE.Raycaster();
-        this.mouse = new THREE.Vector2(-200, 200);
+        this.mouse = new THREE.Vector2(-100, 100);
 
         this.colorChange = new THREE.Color();
 
@@ -97,11 +98,11 @@ class CreateParticles {
 
         this.data = {
 
-            text: 'FUTURE\nIS NOW',
+            text: 'Hello World\nI"m Kulik Dmitrii\nJava developer',
             amount: 1500,
             particleSize: 1,
             particleColor: 0xffffff,
-            textSize: 16,
+            textSize: 9,
             area: 250,
             ease: .05,
         }
@@ -381,4 +382,3 @@ class CreateParticles {
         return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
     }
 }
-
