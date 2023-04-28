@@ -253,40 +253,35 @@ button:active {
 
 /*Сообщения*/
 .message_container {
-    height: 100vh;
+    margin-bottom: 28px;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-.form_message{
+
+.form_message {
     width: 595px;
-    padding: 0px 30px 70px;
+    padding: 0px 30px 16px;
     background: rgba(25, 25, 25, 0.3);
-    border: 1px solid #08fdd8;
-    border-radius: 5px;
-}
-.message_container h1 {
-    font-size: 30px;
-    text-align: left;
-    color: #08fdd8;
-    text-transform: uppercase;
+    border: 1px solid #404141;
+    border-radius: 16px;
 }
 .text_area_message {
     margin-top: 40px;
-    border: 1px solid #ffffff;
+    border: 1px solid #404141;
     border-radius: 13px;
     padding: 20px 25px;
     display: flex;
     flex-direction: column;
 }
-.data_block_message{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: 35px;
-    margin-top: 10px;
+.data_block_message h2{
+    color: white;
+    margin: 10px;
+    font-family: "Times New Roman";
+    font-size: 14px;
 }
-.form h3 {
-    color: #ffffff;
-    font-family: Impact, fantasy;
-
+.data_block_message h3{
+    color: white;
+    margin: 10px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
 }

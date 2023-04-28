@@ -93,7 +93,7 @@
                 <h1>${certificate.title}</h1>
                 <img src="/images/${certificate.previewImgId?c}" height="120px">
                 <#if user.isAdmin()>
-                    <form action="/certificate/delete/${certificate.id}" method="post">
+                    <form action="/certificate/delete/${certificate.id?c}" method="post">
                         <input type="hidden" name="_csrf" value="${_csrf.token}">
                         <button type="submit">Удалить</button>
                     </form>
