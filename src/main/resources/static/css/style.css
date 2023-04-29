@@ -55,15 +55,63 @@ body {
 /*Класс с работами*/
 .myWorks {
     display: grid;
-    grid-template-columns: repeat(3, 3fr);
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 8px;
+    margin-right: 40px;
 }
 
-.myWorks h1 {
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    color: #ffffff;
-    font-size: 1.6rem;
+.work_box {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border-radius: 1rem;
+    /*overflow: hidden;*/
 }
+
+.work_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.5);
+}
+
+.work_img:hover {
+    filter: blur(0px);
+}
+
+/*.work_overlay{*/
+/*    position: absolute;*/
+/*    top: -100%;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    background: hsla(0, 0%, 100%, 0.34);*/
+/*}*/
+/*.work_overlay h2{*/
+/*    font-size: 1.6rem;*/
+/*    font-weight: 600;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+/*.work_overlay .bx{*/
+/*    font-size: 24px;*/
+/*    padding: 10px;*/
+/*    background: #404141;*/
+/*    color: #08fdd8;*/
+/*    border-radius: 4px;*/
+/*}*/
+/*.work_overlay .bx:hover{*/
+/*    background: #03e9f4;*/
+/*    transition: 0.3s all linear;*/
+/*}*/
+/*.work_box:hover .work_overlay{*/
+/*    top: 0;*/
+/*    transition: 0.3s all ease;*/
+/*}*/
 
 .text_zone {
     margin-top: 200px;
@@ -107,8 +155,6 @@ body {
 
 
 .text_zone h3 {
-    font-family: Impact, fantasy;
-    color: rgb(118, 255, 0);
     font-size: 3rem;
     text-align: center;
     line-height: 0em;
@@ -122,9 +168,29 @@ body {
 }
 
 .certificates h1 {
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    color: #ffffff;
-    font-size: 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 8px;
+    margin-right: 40px;
+}
+
+.certificates_box {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border-radius: 1rem;
+}
+
+.certificate_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.5);
+}
+
+.certificate_img:hover {
+    filter: blur(0px);
 }
 
 /*Связаться со мной*/
@@ -266,6 +332,7 @@ button:active {
     border: 1px solid #404141;
     border-radius: 16px;
 }
+
 .text_area_message {
     margin-top: 40px;
     border: 1px solid #404141;
@@ -274,13 +341,15 @@ button:active {
     display: flex;
     flex-direction: column;
 }
-.data_block_message h2{
+
+.data_block_message h2 {
     color: white;
     margin: 10px;
     font-family: "Times New Roman";
     font-size: 14px;
 }
-.data_block_message h3{
+
+.data_block_message h3 {
     color: white;
     margin: 10px;
     font-family: Brush Script MT, Brush Script Std, cursive;

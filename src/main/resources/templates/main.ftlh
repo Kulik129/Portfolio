@@ -26,6 +26,7 @@
   }
 
 
+
         </script>
         <script type="x-shader/x-fragment" id="fragmentshader">
 
@@ -40,6 +41,7 @@
    gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
 
  }
+
 
 
         </script>
@@ -62,16 +64,20 @@
 </div>
 <div class="myWorks">
     <#list works as work>
-        <div>
-            <a href="work/${work.id?c}">
-                <h1>${work.title}</h1>
-                <img src="/images/${work.previewImageId?c}" height="120px">
-                <#if user.isAdmin()>
-                    <form action="/work/delete/${work.id}" method="post">
-                        <input type="hidden" name="_csrf" value="${_csrf.token}">
-                        <button type="submit">Удалить</button>
-                    </form>
-                </#if>
+        <div class="work_box">
+            <img src="/images/${work.previewImageId?c}" alt="" class="work_img">
+<#--            <div class="work_overlay">-->
+<#--                <h2>${work.title}</h2>-->
+<#--                <a href="work/${work.id?c}">-->
+<#--                    <i class="bx bx_work"></i>-->
+<#--                </a>-->
+<#--            </div>-->
+            <#if user.isAdmin()>
+                <form action="/work/delete/${work.id}" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <button type="submit">Удалить</button>
+                </form>
+            </#if>
             </a>
         </div>
     <#else>
@@ -85,13 +91,12 @@
     <h3>Небольшая галерея моих сертификатов</h3><h4>";</h4>
     <h4>}</h4>
 </div>
-
 <div class="certificates">
     <#list certificates as certificate>
-        <div>
-            <a href="/certificates/${certificate.id?c}">
-                <h1>${certificate.title}</h1>
-                <img src="/images/${certificate.previewImgId?c}" height="120px">
+        <div class="certificates_box">
+<#--            <a href="/certificates/${certificate.id?c}">-->
+<#--                <h1>${certificate.title}</h1>-->
+                <img src="/images/${certificate.previewImgId?c}" alt="" class="certificate_img">
                 <#if user.isAdmin()>
                     <form action="/certificate/delete/${certificate.id?c}" method="post">
                         <input type="hidden" name="_csrf" value="${_csrf.token}">
