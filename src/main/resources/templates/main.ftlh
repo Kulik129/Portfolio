@@ -24,9 +24,6 @@
     gl_Position = projectionMatrix * mvPosition;
 
   }
-
-
-
         </script>
         <script type="x-shader/x-fragment" id="fragmentshader">
 
@@ -41,9 +38,6 @@
    gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
 
  }
-
-
-
         </script>
         <div id="magic"></div>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js'></script>
@@ -62,28 +56,107 @@
     <h3>Небольшая галерея моих проектов</h3><h4>";</h4>
     <h4>}</h4>
 </div>
-<div class="myWorks">
-    <#list works as work>
-        <div class="work_box">
-            <img src="/images/${work.previewImageId?c}" alt="" class="work_img">
-<#--            <div class="work_overlay">-->
-<#--                <h2>${work.title}</h2>-->
-<#--                <a href="work/${work.id?c}">-->
-<#--                    <i class="bx bx_work"></i>-->
-<#--                </a>-->
-<#--            </div>-->
-            <#if user.isAdmin()>
-                <form action="/work/delete/${work.id}" method="post">
-                    <input type="hidden" name="_csrf" value="${_csrf.token}">
-                    <button type="submit">Удалить</button>
-                </form>
-            </#if>
-            </a>
-        </div>
-    <#else>
-        <h1>Upss..</h1>
-    </#list>
-</div>
+<section class="section">
+    <div class="myWorks">
+        <#list works as work>
+            <div class="work_box">
+                <img src="/images/${work.previewImageId?c}" alt="" class="work_img">
+                <#--            <div class="work_overlay">-->
+                <#--                <h2>${work.title}</h2>-->
+                <#--                <a href="work/${work.id?c}">-->
+                <#--                    <i class="bx bx_work"></i>-->
+                <#--                </a>-->
+                <#--            </div>-->
+                <#if user.isAdmin()>
+                    <form action="/work/delete/${work.id}" method="post">
+                        <input type="hidden" name="_csrf" value="${_csrf.token}">
+                        <button type="submit">Удалить</button>
+                    </form>
+                </#if>
+                </a>
+            </div>
+        <#else>
+            <h1>Upss..</h1>
+        </#list>
+    </div>
+</section>
+
+<section class="section">
+    <div class="bloc_articles">
+        <article class="post" style="border-top-color:#48ff00">
+            <div class="content">
+                <h4 style="color:#48ff00">Java Core</h4>
+                <div class="post_title">
+                    <h5>Java programs</h5>
+                </div>
+                <div class="post_content">
+                    For the last 20 years, Google has been the main search...
+                </div>
+            </div>
+        </article>
+
+        <article class="post" style="border-top-color:#48ff00">
+            <div class="content">
+                <h4 style="color:#48ff00">MySQL</h4>
+                <div class="post_title">
+                    <h5>MySQL</h5>
+                </div>
+                <div class="post_content">
+                    For the last 20 years, Google has been the main search...
+                </div>
+            </div>
+        </article>
+
+        <article class="post" style="border-top-color:#f7ff00">
+            <div class="content">
+                <h4 style="color:#f7ff00">Linux</h4>
+                <div class="post_title">
+                    <h5>Linux scripts</h5>
+                </div>
+                <div class="post_content">
+                    For the last 20 years, Google has been the main search...
+                </div>
+            </div>
+        </article>
+
+        <article class="post" style="border-top-color:#ff00d9">
+            <div class="content">
+                <h4 style="color:#ff00d9">GIT</h4>
+                <div class="post_title">
+                    <h5>GIT</h5>
+                </div>
+                <div class="post_content">
+                    For the last 20 years, Google has been the main search...
+                </div>
+            </div>
+        </article>
+
+        <article class="post" style="border-top-color:#ff00d9">
+            <div class="content">
+                <h4 style="color:#ff00d9">GIT</h4>
+                <div class="post_title">
+                    <h5>GIT</h5>
+                </div>
+                <div class="post_content">
+                    For the last 20 years, Google has been the main search...
+                </div>
+            </div>
+        </article>
+
+        <article class="post" style="border-top-color:#00bbff">
+            <div class="content">
+                <h4 style="color:#00bbff">GIT</h4>
+                <div class="post_title">
+                    <h5>GIT</h5>
+                </div>
+                <div class="post_content">
+                    For the last 20 years, Google has been the main search...
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
 <div class="text_zone">
     <h4>public class Certificates {<br>
         private String = "
@@ -94,15 +167,15 @@
 <div class="certificates">
     <#list certificates as certificate>
         <div class="certificates_box">
-<#--            <a href="/certificates/${certificate.id?c}">-->
-<#--                <h1>${certificate.title}</h1>-->
-                <img src="/images/${certificate.previewImgId?c}" alt="" class="certificate_img">
-                <#if user.isAdmin()>
-                    <form action="/certificate/delete/${certificate.id?c}" method="post">
-                        <input type="hidden" name="_csrf" value="${_csrf.token}">
-                        <button type="submit">Удалить</button>
-                    </form>
-                </#if>
+            <#--            <a href="/certificates/${certificate.id?c}">-->
+            <#--                <h1>${certificate.title}</h1>-->
+            <img src="/images/${certificate.previewImgId?c}" alt="" class="certificate_img">
+            <#if user.isAdmin()>
+                <form action="/certificate/delete/${certificate.id?c}" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <button type="submit">Удалить</button>
+                </form>
+            </#if>
             </a>
         </div>
     <#else>
