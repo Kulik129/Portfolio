@@ -3,12 +3,12 @@
 </@t.template>
 
 <div class="about">
-    <h3>@SpringBootApplication</h3>
-    <h4>public class Dmitrii {<br>
-        public static void main(String[] args) { <br>
-        SpringApplication.run(Dmitrii.class, args); <br>
-        private String aboutMe = “
-    </h4><br>
+    <div class="text_zone_about">
+        <h1></h1>
+        <h2></h2>
+        <h3></h3>
+        <h4></h4>
+    </div>
     <div class="js">
         <script type="x-shader/x-vertex" id="vertexshader">
 
@@ -24,7 +24,6 @@
     gl_Position = projectionMatrix * mvPosition;
 
   }
-
         </script>
         <script type="x-shader/x-fragment" id="fragmentshader">
 
@@ -40,14 +39,13 @@
 
  }
 
+
         </script>
         <div id="magic"></div>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js'></script>
         <script src="/static/js/script.js"></script>
     </div>
-    <h4>";</h4>
-    <h4>}</h4>
-    <h4>}</h4>
+
 </div>
 
 

@@ -36,21 +36,6 @@ body {
     border-bottom: 1px solid #282828;
 }
 
-.about h4, h3 {
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    color: rgba(213, 213, 213, 0.38);
-    line-height: 2em;
-}
-
-.about h1 {
-    font-family: Impact, fantasy;
-    color: #ffffff;
-}
-
-.about h3 {
-    color: rgba(235, 255, 0, 0.56);
-    /*line-height: 0em;*/
-}
 
 /*Класс с работами*/
 .myWorks {
@@ -112,6 +97,79 @@ body {
 /*    top: 0;*/
 /*    transition: 0.3s all ease;*/
 /*}*/
+
+.text_zone_about h1:first-of-type:before {
+    content: '@SpringBootApplication';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: rgba(235, 255, 0, 0.56);
+    font-size: 18px;
+    position: absolute;
+    margin-top: 1rem;
+    left: 13rem;
+}
+.text_zone_about h1:first-of-type:after {
+    content: 'public class Dmitrii {';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: 3rem;
+    left: 13rem;
+}
+.text_zone_about h2:first-of-type:before {
+    content: 'public static void main(String[] args) { ';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: 5rem;
+    left: 13rem;
+}
+.text_zone_about h2:first-of-type:after {
+    content: 'SpringApplication.run(Dmitrii.class, args);';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: 7rem;
+    left: 13rem;
+}
+.text_zone_about h3:first-of-type:before {
+    content: 'private String aboutMe = “ ';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: 9rem;
+    left: 13rem;
+}
+.text_zone_about h3:first-of-type:after {
+    content: '}';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: 39rem;
+    left: 13rem;
+}
+.text_zone_about h4:first-of-type:before {
+    content: '";';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: 35rem;
+    left: 13rem;
+}
+.text_zone_about h4:first-of-type:after {
+    content: '}';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: 37rem;
+    left: 15rem;
+}
 
 .text_zone p:first-of-type:before {
     content: 'public class Works {';
@@ -341,7 +399,7 @@ button:active {
 }
 
 .js {
-    height: 35vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
