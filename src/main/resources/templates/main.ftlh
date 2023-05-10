@@ -24,6 +24,7 @@
     gl_Position = projectionMatrix * mvPosition;
 
   }
+
         </script>
         <script type="x-shader/x-fragment" id="fragmentshader">
 
@@ -38,6 +39,7 @@
    gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
 
  }
+
         </script>
         <div id="magic"></div>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js'></script>
@@ -50,36 +52,35 @@
 
 
 <div class="text_zone">
-    <h4>public class Works {<br>
-        private String = "
-    </h4>
-    <h3>Небольшая галерея моих проектов</h3><h4>";</h4>
-    <h4>}</h4>
+    <p></p>
+    <h3>Небольшая галерея моих проектов</h3>
+    <h1></h1>
 </div>
-<section class="section">
-    <div class="myWorks">
-        <#list works as work>
-            <div class="work_box">
-                <img src="/images/${work.previewImageId?c}" alt="" class="work_img">
-                <#--            <div class="work_overlay">-->
-                <#--                <h2>${work.title}</h2>-->
-                <#--                <a href="work/${work.id?c}">-->
-                <#--                    <i class="bx bx_work"></i>-->
-                <#--                </a>-->
-                <#--            </div>-->
-                <#if user.isAdmin()>
-                    <form action="/work/delete/${work.id}" method="post">
-                        <input type="hidden" name="_csrf" value="${_csrf.token}">
-                        <button type="submit">Удалить</button>
-                    </form>
-                </#if>
-                </a>
-            </div>
-        <#else>
-            <h1>Upss..</h1>
-        </#list>
-    </div>
-</section>
+
+
+<div class="myWorks">
+    <#list works as work>
+        <div class="work_box">
+            <img src="/images/${work.previewImageId?c}" alt="" class="work_img">
+            <#--            <div class="work_overlay">-->
+            <#--                <h2>${work.title}</h2>-->
+            <#--                <a href="work/${work.id?c}">-->
+            <#--                    <i class="bx bx_work"></i>-->
+            <#--                </a>-->
+            <#--            </div>-->
+            <#if user.isAdmin()>
+                <form action="/work/delete/${work.id}" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <button type="submit">Удалить</button>
+                </form>
+            </#if>
+            </a>
+        </div>
+    <#else>
+        <h1>Upss..</h1>
+    </#list>
+</div>
+
 
 <section class="section">
     <div class="bloc_articles">

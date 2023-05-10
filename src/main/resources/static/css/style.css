@@ -113,15 +113,57 @@ body {
 /*    transition: 0.3s all ease;*/
 /*}*/
 
-.text_zone {
-    margin-top: 200px;
+.text_zone p:first-of-type:before {
+    content: 'public class Works {';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: -4rem;
+    left: 13rem;
+}
+.text_zone p:first-of-type:after {
+    content: 'private String = "';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    left: 13rem;
+    bottom: 5rem;
+}
+.text_zone h1:first-of-type:before {
+    content: '";';
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: -4rem;
+    right: 3rem;
+}
+.text_zone h1:first-of-type:after {
+    content: '}';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    left: 13rem;
+    bottom: 0rem;
+}
+.text_zone h3 {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 0em;
 }
 
-.text_zone h4 {
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    color: rgba(213, 213, 213, 0.38);
-    line-height: 2em;
-}
+/*.text_zone {*/
+/*    margin-top: 200px;*/
+/*}*/
+
+/*.text_zone h4 {*/
+/*    font-family: Brush Script MT, Brush Script Std, cursive;*/
+/*    color: rgba(213, 213, 213, 0.38);*/
+/*    line-height: 2em;*/
+/*}*/
 
 /*Зона с описанием работ*/
 .wrapper {
@@ -154,11 +196,7 @@ body {
 }
 
 
-.text_zone h3 {
-    font-size: 3rem;
-    text-align: center;
-    line-height: 0em;
-}
+
 
 /*Класс с сертификатами*/
 .certificates {
