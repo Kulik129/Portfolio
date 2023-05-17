@@ -8,34 +8,26 @@
 <#import "menu/template.ftlh" as t>
 <@t.template user>
 </@t.template>
-<div class="text_zone">
-    <h4>public class Works {<br>
-        private String = "
-    </h4>
-    <div class="wrapper">
-        <div class="typing-demo">
-            Небольшая галерея моих проектов
-        </div>
-    </div>
-    <h4>}</h4>
-</div>
-<div class="myWorks">
-    <#list works as work>
-        <div>
-            <a href="work/${work.id?c}">
-                <h1>${work.title}</h1>
-                <img src="/images/${work.previewImageId?c}" height="120px">
+<div class="work_part">
+    <h2></h2>
+    <h3>Works</h3>
+    <h1></h1>
+    <div class="myWorks">
+        <#list works as work>
+            <div class="work_box">
+                <img src="/images/${work.previewImageId?c}" alt="" class="work_img">
                 <#if user.isAdmin()>
-                    <form action="/work/delete/${work.id}" method="post">
+                    <form action="/work/delete/${work.id?c}" method="post">
                         <input type="hidden" name="_csrf" value="${_csrf.token}">
-                        <input type="submit" value="delete">
+                        <button type="submit">Удалить</button>
                     </form>
                 </#if>
-            </a>
-        </div>
-    <#else>
-        <h1>Upss..</h1>
-    </#list>
+                </a>
+            </div>
+        <#else>
+            <h2>Upss..</h2>
+        </#list>
+    </div>
 </div>
 </body>
 </html>

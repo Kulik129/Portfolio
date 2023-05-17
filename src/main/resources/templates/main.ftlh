@@ -24,6 +24,9 @@
     gl_Position = projectionMatrix * mvPosition;
 
   }
+
+
+
         </script>
         <script type="x-shader/x-fragment" id="fragmentshader">
 
@@ -40,6 +43,9 @@
  }
 
 
+
+
+
         </script>
         <div id="magic"></div>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js'></script>
@@ -48,36 +54,28 @@
 
 </div>
 
-
-<div class="text_zone">
-    <p></p>
-    <h3>Небольшая галерея моих проектов</h3>
+<div class="work_part">
+    <h2></h2>
+    <h3>Works</h3>
     <h1></h1>
+    <div class="myWorks">
+        <#list works as work>
+            <div class="work_box">
+                <img src="/images/${work.previewImageId?c}" alt="" class="work_img">
+                <#if user.isAdmin()>
+                    <form action="/work/delete/${work.id?c}" method="post">
+                        <input type="hidden" name="_csrf" value="${_csrf.token}">
+                        <button type="submit">Удалить</button>
+                    </form>
+                </#if>
+                </a>
+            </div>
+        <#else>
+            <h2>Upss..</h2>
+        </#list>
+    </div>
 </div>
 
-
-<div class="myWorks">
-    <#list works as work>
-        <div class="work_box">
-            <img src="/images/${work.previewImageId?c}" alt="" class="work_img">
-            <#--            <div class="work_overlay">-->
-            <#--                <h2>${work.title}</h2>-->
-            <#--                <a href="work/${work.id?c}">-->
-            <#--                    <i class="bx bx_work"></i>-->
-            <#--                </a>-->
-            <#--            </div>-->
-            <#if user.isAdmin()>
-                <form action="/work/delete/${work.id}" method="post">
-                    <input type="hidden" name="_csrf" value="${_csrf.token}">
-                    <button type="submit">Удалить</button>
-                </form>
-            </#if>
-            </a>
-        </div>
-    <#else>
-        <h1>Upss..</h1>
-    </#list>
-</div>
 
 
 <section class="section">
@@ -183,12 +181,10 @@
 </div>
 
 <div class="contact-me">
+    <div class="text_zone_contact">
+        <h4></h4>
 
-    <div class="text_zone">
-        <h4>public class ContactMe {<br>
-            private String = "
-        </h4>
-        <h1>Связаться со мной</h1><h4>";</h4>
+        <h1>Связаться со мной</h1>
         <div class="data_block">
             <form action="/message/send" method="post">
                 <input type="text" class="name" name="sender" placeholder="Введите ваш email">
@@ -201,8 +197,8 @@
                 <button type="submit">Отправить</button>
             </form>
         </div>
-        <h4>}</h4>
     </div>
+
 
 </div>
 </body>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
 body {
     background: #1d1d1d;
     display: block;
@@ -38,6 +40,87 @@ body {
 
 
 /*Класс с работами*/
+.work_part {
+    display: flex;
+    flex-direction: column;
+    /*align-items: flex-start;*/
+    text-align: left;
+}
+
+.work_part h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    line-height: 1.2em;
+}
+
+.work_part h1 {
+    font-size: 1.5rem;
+    line-height: 1.2em;
+}
+
+.myWorks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.work_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*.work_img {*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*}*/
+
+.work_part h2:before {
+    content: 'public class Works {';
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: #515152;
+    font-size: 18px;
+}
+
+.work_part h2:after {
+    content: 'private String = "';
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: #515152;
+    font-size: 18px;
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 0px;
+}
+
+.work_part h1:before {
+    content: '";';
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: #515152;
+    font-size: 18px;
+}
+
+.work_part h1:after {
+    content: '}';
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: #515152;
+    font-size: 18px;
+    white-space: pre;
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.work_part h3 {
+    font-family: 'Titan One', cursive;
+    text-align: center;
+    font-size: 5.2rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #08fdd8;
+}
 .myWorks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -64,39 +147,7 @@ body {
 .work_img:hover {
     filter: blur(0px);
 }
-
-/*.work_overlay{*/
-/*    position: absolute;*/
-/*    top: -100%;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    background: hsla(0, 0%, 100%, 0.34);*/
-/*}*/
-/*.work_overlay h2{*/
-/*    font-size: 1.6rem;*/
-/*    font-weight: 600;*/
-/*    margin-bottom: 10px;*/
-/*}*/
-/*.work_overlay .bx{*/
-/*    font-size: 24px;*/
-/*    padding: 10px;*/
-/*    background: #404141;*/
-/*    color: #08fdd8;*/
-/*    border-radius: 4px;*/
-/*}*/
-/*.work_overlay .bx:hover{*/
-/*    background: #03e9f4;*/
-/*    transition: 0.3s all linear;*/
-/*}*/
-/*.work_box:hover .work_overlay{*/
-/*    top: 0;*/
-/*    transition: 0.3s all ease;*/
-/*}*/
+/*about*/
 
 .text_zone_about h1:first-of-type:before {
     content: '@SpringBootApplication';
@@ -171,57 +222,9 @@ body {
     left: 15rem;
 }
 
-.text_zone p:first-of-type:before {
-    content: 'public class Works {';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
-    color: #515152;
-    font-size: 18px;
-    position: absolute;
-    margin-top: -4rem;
-    left: 13rem;
-}
-.text_zone p:first-of-type:after {
-    content: 'private String = "';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
-    color: #515152;
-    font-size: 18px;
-    position: absolute;
-    left: 13rem;
-    bottom: 5rem;
-}
-.text_zone h1:first-of-type:before {
-    content: '";';
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    color: #515152;
-    font-size: 18px;
-    position: absolute;
-    margin-top: -4rem;
-    right: 3rem;
-}
-.text_zone h1:first-of-type:after {
-    content: '}';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
-    color: #515152;
-    font-size: 18px;
-    position: absolute;
-    left: 13rem;
-    bottom: 0rem;
-}
-.text_zone h3 {
-    font-size: 3rem;
-    text-align: center;
-    line-height: 0em;
-}
 
-/*.text_zone {*/
-/*    margin-top: 200px;*/
-/*}*/
 
-/*.text_zone h4 {*/
-/*    font-family: Brush Script MT, Brush Script Std, cursive;*/
-/*    color: rgba(213, 213, 213, 0.38);*/
-/*    line-height: 2em;*/
-/*}*/
+
 
 /*Зона с описанием работ*/
 .wrapper {
@@ -291,6 +294,25 @@ body {
 }
 
 /*Связаться со мной*/
+.text_zone_contact h4:first-of-type:before {
+    content: 'public class ContactMe {';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: -4rem;
+    left: 13rem;
+}
+.text_zone_contact h6:first-of-type:after {
+    content: 'private String = "';
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    left: 13rem;
+    bottom: 5rem;
+}
+
 .contact-me {
     font-family: Brush Script MT, Brush Script Std, cursive;
     width: 100%;
