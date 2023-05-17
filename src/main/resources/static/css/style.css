@@ -222,55 +222,87 @@ body {
     left: 15rem;
 }
 
-
-
-
-
-/*Зона с описанием работ*/
-.wrapper {
-    height: 7vh;
-    display: grid;
-    place-items: center;
-}
-
-.typing-demo {
-    color: rgb(118, 255, 0);
-    width: 31ch;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 1px solid;
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    font-size: 3em;
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent
-    }
-}
-
-
-
-
 /*Класс с сертификатами*/
+.certificates_part {
+    display: flex;
+    flex-direction: column;
+    /*align-items: flex-start;*/
+    text-align: left;
+}
+
+.certificates_part h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    line-height: 1.2em;
+}
+
+.certificates_part h1 {
+    font-size: 1.5rem;
+    line-height: 1.2em;
+}
+
+.certificates {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certificates_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certificates_part h2:before {
+    content: 'public class Certificates {';
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: #515152;
+    font-size: 18px;
+}
+
+.certificates_part h2:after {
+    content: 'private String = "';
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: #515152;
+    font-size: 18px;
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 0px;
+}
+
+.certificates_part h1:before {
+    content: '";';
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: #515152;
+    font-size: 18px;
+}
+
+.certificates_part h1:after {
+    content: '}';
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: #515152;
+    font-size: 18px;
+    white-space: pre;
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.certificates_part h3 {
+    font-family: 'Titan One', cursive;
+    text-align: center;
+    font-size: 5.2rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #08fdd8;
+}
 .certificates {
     display: grid;
-    grid-template-columns: repeat(3, 3fr);
-    gap: 2rem;
-    margin-right: 40px;
-}
-
-.certificates h1 {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px 8px;
+    gap: 2rem;
     margin-right: 40px;
 }
 
@@ -279,6 +311,7 @@ body {
     width: 100%;
     height: 320px;
     border-radius: 1rem;
+    /*overflow: hidden;*/
 }
 
 .certificate_img {
@@ -426,14 +459,6 @@ button:active {
     align-items: center;
     justify-content: center;
     margin-left: -34px;
-}
-
-.work img {
-    height: 480px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px; /* Отступ сверху */
 }
 
 /*Сообщения*/

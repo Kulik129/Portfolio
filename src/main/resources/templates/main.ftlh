@@ -154,31 +154,31 @@
     </div>
 </section>
 
-<div class="text_zone">
-    <h4>public class Certificates {<br>
-        private String = "
-    </h4>
-    <h3>Небольшая галерея моих сертификатов</h3><h4>";</h4>
-    <h4>}</h4>
+<div class="certificates_part">
+    <h2></h2>
+    <h3>Certificates</h3>
+    <h1></h1>
+    <div class="certificates">
+        <#list certificates as certificate>
+            <div class="certificates_box">
+                <#--            <a href="/certificates/${certificate.id?c}">-->
+                <#--                <h1>${certificate.title}</h1>-->
+                <img src="/images/${certificate.previewImgId?c}" alt="" class="certificate_img">
+                <#if user.isAdmin()>
+                    <form action="/certificate/delete/${certificate.id?c}" method="post">
+                        <input type="hidden" name="_csrf" value="${_csrf.token}">
+                        <button type="submit">Удалить</button>
+                    </form>
+                </#if>
+                </a>
+            </div>
+        <#else>
+            <h1>Upss=( </h1>
+        </#list>
+    </div>
 </div>
-<div class="certificates">
-    <#list certificates as certificate>
-        <div class="certificates_box">
-            <#--            <a href="/certificates/${certificate.id?c}">-->
-            <#--                <h1>${certificate.title}</h1>-->
-            <img src="/images/${certificate.previewImgId?c}" alt="" class="certificate_img">
-            <#if user.isAdmin()>
-                <form action="/certificate/delete/${certificate.id?c}" method="post">
-                    <input type="hidden" name="_csrf" value="${_csrf.token}">
-                    <button type="submit">Удалить</button>
-                </form>
-            </#if>
-            </a>
-        </div>
-    <#else>
-        <h1>Upss=( </h1>
-    </#list>
-</div>
+
+
 
 <div class="contact-me">
     <div class="text_zone_contact">

@@ -11,35 +11,28 @@
 <#import "menu/template.ftlh" as t>
 <@t.template user>
 </@t.template>
-<div class="text_zone">
-    <h4>public class Works {<br>
-        private String = "
-    </h4>
-    <div class="wrapper">
-        <div class="typing-demo">
-            Небольшая галерея моих сертификатов
-        </div>
-    </div>
-    <h4>}</h4>
-</div>
-
-<div class="certificates">
-    <#list certificates as certificate>
-        <div>
-            <a href="/certificates/${certificate.id?c}">
-                <h1>${certificate.title}</h1>
-                <img src="/images/${certificate.previewImgId?c}" height="120px">
+<div class="certificates_part">
+    <h2></h2>
+    <h3>Certificates</h3>
+    <h1></h1>
+    <div class="certificates">
+        <#list certificates as certificate>
+            <div class="certificates_box">
+                <#--            <a href="/certificates/${certificate.id?c}">-->
+                <#--                <h1>${certificate.title}</h1>-->
+                <img src="/images/${certificate.previewImgId?c}" alt="" class="certificate_img">
                 <#if user.isAdmin()>
-                    <form action="/certificate/delete/${certificate.id}" method="post">
+                    <form action="/certificate/delete/${certificate.id?c}" method="post">
                         <input type="hidden" name="_csrf" value="${_csrf.token}">
-                        <input type="submit" value="Удалить">
+                        <button type="submit">Удалить</button>
                     </form>
                 </#if>
-            </a>
-        </div>
-    <#else>
-        <h1>Upss=( </h1>
-    </#list>
+                </a>
+            </div>
+        <#else>
+            <h1>Upss=( </h1>
+        </#list>
+    </div>
 </div>
 </body>
 </html>
