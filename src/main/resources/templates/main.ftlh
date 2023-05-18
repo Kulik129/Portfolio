@@ -27,6 +27,7 @@
 
 
 
+
         </script>
         <script type="x-shader/x-fragment" id="fragmentshader">
 
@@ -41,10 +42,6 @@
    gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
 
  }
-
-
-
-
 
         </script>
         <div id="magic"></div>
@@ -77,82 +74,86 @@
 </div>
 
 
+<div class="part">
+    <h2></h2>
+    <h3>Skills</h3>
+    <h1></h1>
+    <section class="section">
+        <div class="bloc_articles">
+            <article class="post" style="border-top-color:#48ff00">
+                <div class="content">
+                    <h4 style="color:#48ff00">Java Core</h4>
+                    <div class="post_title">
+                        <h5>Java programs</h5>
+                    </div>
+                    <div class="post_content">
+                        For the last 20 years, Google has been the main search...
+                    </div>
+                </div>
+            </article>
 
-<section class="section">
-    <div class="bloc_articles">
-        <article class="post" style="border-top-color:#48ff00">
-            <div class="content">
-                <h4 style="color:#48ff00">Java Core</h4>
-                <div class="post_title">
-                    <h5>Java programs</h5>
+            <article class="post" style="border-top-color:#48ff00">
+                <div class="content">
+                    <h4 style="color:#48ff00">MySQL</h4>
+                    <div class="post_title">
+                        <h5>MySQL</h5>
+                    </div>
+                    <div class="post_content">
+                        For the last 20 years, Google has been the main search...
+                    </div>
                 </div>
-                <div class="post_content">
-                    For the last 20 years, Google has been the main search...
-                </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="post" style="border-top-color:#48ff00">
-            <div class="content">
-                <h4 style="color:#48ff00">MySQL</h4>
-                <div class="post_title">
-                    <h5>MySQL</h5>
+            <article class="post" style="border-top-color:#f7ff00">
+                <div class="content">
+                    <h4 style="color:#f7ff00">Linux</h4>
+                    <div class="post_title">
+                        <h5>Linux scripts</h5>
+                    </div>
+                    <div class="post_content">
+                        For the last 20 years, Google has been the main search...
+                    </div>
                 </div>
-                <div class="post_content">
-                    For the last 20 years, Google has been the main search...
-                </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="post" style="border-top-color:#f7ff00">
-            <div class="content">
-                <h4 style="color:#f7ff00">Linux</h4>
-                <div class="post_title">
-                    <h5>Linux scripts</h5>
+            <article class="post" style="border-top-color:#ff00d9">
+                <div class="content">
+                    <h4 style="color:#ff00d9">GIT</h4>
+                    <div class="post_title">
+                        <h5>GIT</h5>
+                    </div>
+                    <div class="post_content">
+                        For the last 20 years, Google has been the main search...
+                    </div>
                 </div>
-                <div class="post_content">
-                    For the last 20 years, Google has been the main search...
-                </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="post" style="border-top-color:#ff00d9">
-            <div class="content">
-                <h4 style="color:#ff00d9">GIT</h4>
-                <div class="post_title">
-                    <h5>GIT</h5>
+            <article class="post" style="border-top-color:#ff00d9">
+                <div class="content">
+                    <h4 style="color:#ff00d9">GIT</h4>
+                    <div class="post_title">
+                        <h5>GIT</h5>
+                    </div>
+                    <div class="post_content">
+                        For the last 20 years, Google has been the main search...
+                    </div>
                 </div>
-                <div class="post_content">
-                    For the last 20 years, Google has been the main search...
-                </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="post" style="border-top-color:#ff00d9">
-            <div class="content">
-                <h4 style="color:#ff00d9">GIT</h4>
-                <div class="post_title">
-                    <h5>GIT</h5>
+            <article class="post" style="border-top-color:#00bbff">
+                <div class="content">
+                    <h4 style="color:#00bbff">GIT</h4>
+                    <div class="post_title">
+                        <h5>GIT</h5>
+                    </div>
+                    <div class="post_content">
+                        For the last 20 years, Google has been the main search...
+                    </div>
                 </div>
-                <div class="post_content">
-                    For the last 20 years, Google has been the main search...
-                </div>
-            </div>
-        </article>
-
-        <article class="post" style="border-top-color:#00bbff">
-            <div class="content">
-                <h4 style="color:#00bbff">GIT</h4>
-                <div class="post_title">
-                    <h5>GIT</h5>
-                </div>
-                <div class="post_content">
-                    For the last 20 years, Google has been the main search...
-                </div>
-            </div>
-        </article>
-    </div>
-</section>
+            </article>
+        </div>
+    </section>
+</div>
 
 <div class="certificates_part">
     <h2></h2>
@@ -161,15 +162,14 @@
     <div class="certificates">
         <#list certificates as certificate>
             <div class="certificates_box">
-                <#--            <a href="/certificates/${certificate.id?c}">-->
-                <#--                <h1>${certificate.title}</h1>-->
-                <img src="/images/${certificate.previewImgId?c}" alt="" class="certificate_img">
-                <#if user.isAdmin()>
-                    <form action="/certificate/delete/${certificate.id?c}" method="post">
-                        <input type="hidden" name="_csrf" value="${_csrf.token}">
-                        <button type="submit">Удалить</button>
-                    </form>
-                </#if>
+                <a href="/certificates/${certificate.id?c}">
+                    <img src="/images/${certificate.previewImgId?c}" alt="" class="certificate_img">
+                    <#if user.isAdmin()>
+                        <form action="/certificate/delete/${certificate.id?c}" method="post">
+                            <input type="hidden" name="_csrf" value="${_csrf.token}">
+                            <button type="submit">Удалить</button>
+                        </form>
+                    </#if>
                 </a>
             </div>
         <#else>
@@ -179,11 +179,9 @@
 </div>
 
 
-
 <div class="contact-me">
     <div class="text_zone_contact">
         <h4></h4>
-
         <h1>Связаться со мной</h1>
         <div class="data_block">
             <form action="/message/send" method="post">
@@ -198,6 +196,7 @@
             </form>
         </div>
     </div>
+</div>
 
 
 </div>

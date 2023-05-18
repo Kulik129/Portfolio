@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 body {
     background: #1d1d1d;
     display: block;
@@ -43,7 +45,7 @@ body {
 .work_part {
     display: flex;
     flex-direction: column;
-    /*align-items: flex-start;*/
+    align-items: normal;
     text-align: left;
 }
 
@@ -78,14 +80,16 @@ body {
 
 .work_part h2:before {
     content: 'public class Works {';
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
 }
 
 .work_part h2:after {
     content: 'private String = "';
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     display: block;
@@ -96,14 +100,16 @@ body {
 
 .work_part h1:before {
     content: '";';
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
 }
 
 .work_part h1:after {
     content: '}';
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     white-space: pre;
@@ -151,7 +157,8 @@ body {
 
 .text_zone_about h1:first-of-type:before {
     content: '@SpringBootApplication';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: rgba(235, 255, 0, 0.56);
     font-size: 18px;
     position: absolute;
@@ -160,7 +167,8 @@ body {
 }
 .text_zone_about h1:first-of-type:after {
     content: 'public class Dmitrii {';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     position: absolute;
@@ -169,7 +177,8 @@ body {
 }
 .text_zone_about h2:first-of-type:before {
     content: 'public static void main(String[] args) { ';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     position: absolute;
@@ -178,7 +187,8 @@ body {
 }
 .text_zone_about h2:first-of-type:after {
     content: 'SpringApplication.run(Dmitrii.class, args);';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     position: absolute;
@@ -187,7 +197,8 @@ body {
 }
 .text_zone_about h3:first-of-type:before {
     content: 'private String aboutMe = “ ';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     position: absolute;
@@ -196,7 +207,8 @@ body {
 }
 .text_zone_about h3:first-of-type:after {
     content: '}';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     position: absolute;
@@ -205,7 +217,8 @@ body {
 }
 .text_zone_about h4:first-of-type:before {
     content: '";';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     position: absolute;
@@ -214,7 +227,8 @@ body {
 }
 .text_zone_about h4:first-of-type:after {
     content: '}';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     position: absolute;
@@ -226,7 +240,7 @@ body {
 .certificates_part {
     display: flex;
     flex-direction: column;
-    /*align-items: flex-start;*/
+    align-items: normal;
     text-align: left;
 }
 
@@ -256,14 +270,16 @@ body {
 
 .certificates_part h2:before {
     content: 'public class Certificates {';
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
 }
 
 .certificates_part h2:after {
     content: 'private String = "';
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     display: block;
@@ -274,14 +290,16 @@ body {
 
 .certificates_part h1:before {
     content: '";';
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
 }
 
 .certificates_part h1:after {
     content: '}';
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
     white-space: pre;
@@ -327,23 +345,25 @@ body {
 }
 
 /*Связаться со мной*/
-.text_zone_contact h4:first-of-type:before {
-    content: 'public class ContactMe {';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
-    color: #515152;
-    font-size: 18px;
-    position: absolute;
-    margin-top: -4rem;
-    left: 13rem;
+.text_zone_contact h4{
+    display: flex;
+    flex-direction: column;
 }
-.text_zone_contact h6:first-of-type:after {
-    content: 'private String = "';
-    font-family: Brush Script MT, Brush Script Std, cursive;;
+.text_zone_contact h4:before {
+    content: 'public class ContactMe {';
+    font-family: 'Kaushan Script', cursive;
     color: #515152;
     font-size: 18px;
-    position: absolute;
-    left: 13rem;
-    bottom: 5rem;
+    position: relative;
+    order: 1;
+}
+.text_zone_contact h4:after {
+    content: 'private String = "';
+    font-family: 'Kaushan Script', cursive;
+    color: #515152;
+    font-size: 18px;
+    position: relative;
+    order: 2;
 }
 
 .contact-me {
@@ -354,6 +374,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: left;
+    overflow: hidden;
+
 }
 
 .contact-me h1 {
@@ -500,6 +522,70 @@ button:active {
 }
 
 /*Квадраты*/
+.part {
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    text-align: left;
+}
+.part h2 {
+    margin-top: 150px;
+    font-size: 2rem;
+    line-height: 1.2em;
+}
+
+.part h1 {
+    font-size: 1.5rem;
+    line-height: 1.2em;
+}
+.part h3 {
+    font-family: 'Titan One', cursive;
+    text-align: center;
+    font-size: 5.2rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #08fdd8;
+}
+.part h2:before {
+    content: 'public class Skills {';
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
+    color: #515152;
+    font-size: 18px;
+}
+
+.part h2:after {
+    content: 'private String = "';
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
+    color: #515152;
+    font-size: 18px;
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 0px;
+}
+
+.part h1:before {
+    content: '";';
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
+    color: #515152;
+    font-size: 18px;
+}
+
+.part h1:after {
+    content: '}';
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Kaushan Script', cursive;
+    color: #515152;
+    font-size: 18px;
+    white-space: pre;
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
 .bloc_articles {
     display: grid;
     grid-template-columns: repeat(3,3fr);

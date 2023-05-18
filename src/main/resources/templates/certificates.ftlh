@@ -18,16 +18,16 @@
     <div class="certificates">
         <#list certificates as certificate>
             <div class="certificates_box">
-                <#--            <a href="/certificates/${certificate.id?c}">-->
-                <#--                <h1>${certificate.title}</h1>-->
+                <a href="/certificates/${certificate.id?c}">
                 <img src="/images/${certificate.previewImgId?c}" alt="" class="certificate_img">
+                </a>
                 <#if user.isAdmin()>
                     <form action="/certificate/delete/${certificate.id?c}" method="post">
                         <input type="hidden" name="_csrf" value="${_csrf.token}">
                         <button type="submit">Удалить</button>
                     </form>
                 </#if>
-                </a>
+
             </div>
         <#else>
             <h1>Upss=( </h1>
