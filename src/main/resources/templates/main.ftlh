@@ -53,7 +53,7 @@
 
 <div class="work_part">
     <h2></h2>
-    <h3>Works</h3>
+    <h3>Projects</h3>
     <h1></h1>
     <div class="myWorks">
         <#list works as work>
@@ -182,17 +182,17 @@
 <div class="contact-me">
     <div class="text_zone_contact">
         <h4></h4>
-        <h1>Связаться со мной</h1>
+        <h1>Contact me</h1>
         <div class="data_block">
             <form action="/message/send" method="post">
-                <input type="text" class="name" name="sender" placeholder="Введите ваш email">
-                <input type="text" class="messageSubject" name="messageSubject" placeholder="Тема письма">
+                <input type="text" class="name" name="sender" placeholder="Your email">
+                <input type="text" class="messageSubject" name="messageSubject" placeholder="Subject">
                 <div class="text_area">
                     <p class="message">Message</p>
-                    <textarea name="message" rows="5" placeholder="Введите текст сообщения..."></textarea>
+                    <textarea name="message" rows="5" placeholder="Enter the text of the message..."></textarea>
                 </div>
                 <input type="hidden" name="_csrf" value="${_csrf.token}">
-                <button type="submit">Отправить</button>
+                <button type="submit">Send</button>
             </form>
         </div>
     </div>

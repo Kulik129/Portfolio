@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
 body {
     background: #1d1d1d;
     display: block;
@@ -30,7 +31,7 @@ body {
 }
 
 .list_menu a {
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: 'Londrina Shadow', cursive;
     text-align: center;
     width: 100%;
     display: block;
@@ -38,6 +39,9 @@ body {
     color: #909096;
     line-height: 5rem;
     border-bottom: 1px solid #282828;
+}
+.list_menu a:hover {
+    color: yellow;
 }
 
 
@@ -120,12 +124,12 @@ body {
 }
 
 .work_part h3 {
-    font-family: 'Titan One', cursive;
+    font-family: 'Londrina Shadow', cursive;
+    color: yellow;
     text-align: center;
     font-size: 5.2rem;
     margin-top: 0px;
     margin-bottom: 0px;
-    color: #08fdd8;
 }
 .myWorks {
     display: grid;
@@ -148,6 +152,7 @@ body {
     object-fit: cover;
     object-position: center;
     filter: brightness(0.5);
+    border-radius: 10px;
 }
 
 .work_img:hover {
@@ -310,12 +315,12 @@ body {
 }
 
 .certificates_part h3 {
-    font-family: 'Titan One', cursive;
+    font-family: 'Londrina Shadow', cursive;
+    color: yellow;
     text-align: center;
     font-size: 5.2rem;
     margin-top: 0px;
     margin-bottom: 0px;
-    color: #08fdd8;
 }
 .certificates {
     display: grid;
@@ -334,10 +339,11 @@ body {
 
 .certificate_img {
     width: 100%;
-    height: 100%;
+    height: 260px;
     object-fit: cover;
     object-position: center;
     filter: brightness(0.5);
+    border-radius: 10px;
 }
 
 .certificate_img:hover {
@@ -367,7 +373,7 @@ body {
 }
 
 .contact-me {
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: 'Londrina Shadow', cursive;
     width: 100%;
     border: 0;
     height: 100vh;
@@ -379,14 +385,14 @@ body {
 }
 
 .contact-me h1 {
-    font-size: 30px;
+    font-size: 50px;
     text-align: left;
     color: #08fdd8;
     text-transform: uppercase;
 }
 
 input {
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: 'Londrina Shadow', cursive;
     background: transparent;
     height: 40px;
     border: none;
@@ -437,7 +443,7 @@ textarea {
     border: none;
     font-size: 24px;
     color: #fff;
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: 'Londrina Shadow', cursive;
 }
 
 textarea:focus::placeholder {
@@ -455,11 +461,11 @@ textarea:focus {
 
 button {
     float: right;
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    padding: 10px 15px;
+    font-family: 'Londrina Shadow', cursive;
+    padding: 10px 40px;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 20px;
     color: aqua;
     border-radius: 5px;
     border: 1px solid aqua;
@@ -539,12 +545,12 @@ button:active {
     line-height: 1.2em;
 }
 .part h3 {
-    font-family: 'Titan One', cursive;
+    font-family: 'Londrina Shadow', cursive;
+    color: yellow;
     text-align: center;
     font-size: 5.2rem;
     margin-top: 0px;
     margin-bottom: 0px;
-    color: #08fdd8;
 }
 .part h2:before {
     content: 'public class Skills {';
@@ -609,6 +615,11 @@ button:active {
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12);
     border-top: 2px solid #FD2155;
     overflow: hidden;
+    border-radius: 10px;
+}
+.post:hover {
+    transform: scale(1.1);
+    transition: transform 0.25s;
 }
 .section h5 {
     color: white;
@@ -620,3 +631,4 @@ button:active {
     /*   text-align: center; */
     font-size: 1.6rem;
 }
+

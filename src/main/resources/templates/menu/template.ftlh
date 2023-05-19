@@ -16,18 +16,18 @@
     <div class="list_menu">
         <#if user.email??>
             <h3><i>${user.name}</i></h3>
-            <a href="/">Обомне</a>
-            <a href="/certificates">Сертификаты</a>
-            <a href="/works">Работы</a>
-            <a href="/">Связь со мной</a>
+            <a href="/">About me</a>
+            <a href="/certificates">Certificates</a>
+            <a href="/works">Projects</a>
+            <a href="/">Contact me</a>
             <#if user.isAdmin()>
-                <a href="/admin">Админка</a>
-                <a href="/message">Сообщения</a>
+                <a href="/admin">Admin</a>
+                <a href="/message">Messages</a>
             </#if>
             <form action="/logout" method="post">
                 <input type="hidden" name="_csrf" value="${_csrf.token}">
 <#--                <input type="submit" value="Выйти"/>-->
-                <button type="submit">Выйти</button>
+                <button type="submit">Log out</button>
             </form>
 <#--            <#if user.isAdmin()>-->
 <#--                <a href="/admin">Админка</a>-->
@@ -35,10 +35,10 @@
 <#--            </#if>-->
         <#else>
 <#--            <a href="/login">Войти</a>-->
-            <a href="/">Обомне</a>
-            <a href="/certificates">Сертификаты</a>
-            <a href="/works">Работы</a>
-            <a href="/">Связь со мной</a>
+            <a href="/">About me</a>
+            <a href="/certificates">Certificates</a>
+            <a href="/works">Projects</a>
+            <a href="/">Contact me</a>
         </#if>
     </div>
 </div>
